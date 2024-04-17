@@ -2,7 +2,7 @@ const path = require('path')
 module.exports = {
   version: "1.5",
   title: "gepeto",
-  description: "Generate Local AI Launchers, Instantly. https://gepeto.pinokio.computer",
+  description: "Generate Pinokio Launchers, Instantly. https://gepeto.pinokio.computer",
   icon: "icon.jpeg",
   menu: async (kernel) => {
     let running = await kernel.running(__dirname, "start.js")
