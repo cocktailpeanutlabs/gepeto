@@ -3,7 +3,7 @@ module.exports = {
     method: "shell.run",
     params: {
       id: "npx",
-      message: "npx gepeto@latest -y",
+      message: "npx --yes gepeto@latest",
       path: "..",
       conda: { skip: true },
       on: [{ "event": "/project/i", done: true }]
