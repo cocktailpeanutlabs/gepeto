@@ -57,6 +57,12 @@ form button {
 document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault()
   e.stopPropagation()
+  let name = document.querySelector("#name").value
+  if (/\s/.test(name)) {
+    alert("The name must not contain spaces")
+    return
+  }
+
   let params = new URLSearchParams()
   params.set("name", document.querySelector("#name").value)
   params.set("git", document.querySelector("#git").value)
