@@ -5,8 +5,7 @@ module.exports = {
       id: "npx",
       message: "npx --yes gepeto@latest",
       path: "..",
-      conda: { skip: true },
-      on: [{ "event": "/project/i", done: true }]
+      on: [{ "event": "/project name/i", done: true }]
     }
   }, {
     method: "shell.enter",
