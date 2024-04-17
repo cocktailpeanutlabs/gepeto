@@ -24,6 +24,10 @@ module.exports = {
         icon: "fa-solid fa-rocket",
         text: "Gepeto",
         href: "index.html?raw=true"
+      }, {
+        icon: "fa-solid fa-plug",
+        text: "Update",
+        href: "update.js"
       }]
     }
   }
