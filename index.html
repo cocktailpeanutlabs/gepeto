@@ -60,7 +60,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   let params = new URLSearchParams()
   params.set("name", encodeURIComponent(document.querySelector("#name").value))
   params.set("git", encodeURIComponent(document.querySelector("#git").value))
-  params.set("icon", encodeURIComponentdocument.querySelector("#icon").value))
+  params.set("icon", encodeURIComponent(document.querySelector("#icon").value))
   location.href = "start.js?" + params.toString()
 })
 </script>
