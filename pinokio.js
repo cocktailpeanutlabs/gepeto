@@ -21,6 +21,7 @@ module.exports = {
     } else {
       // display html button
       return [{
+        default: true,
         icon: "fa-solid fa-rocket",
         text: "Gepeto",
         href: "index.html?raw=true"

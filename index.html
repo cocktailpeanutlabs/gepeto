@@ -35,6 +35,16 @@ form button {
   border-radius: 4px;
   border: none;
 }
+.advanced {
+  padding: 10px;
+  margin: 20px 0;
+  background: rgba(0,0,100, 0.04);
+}
+.advanced h3 {
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+}
 </style>
 </head>
 <body>
@@ -51,11 +61,42 @@ form button {
   <label>Git URL (Leave empty to start an empty project)</label>
   <input type="text" placeholder='Git URL' id='git' />
 </div>
+<div class='advanced'>
+  <h3 id="advanced-toggle">Publisher Info (optional)</h3>
+  <div id="advanced-content">
+    <div class='item'>
+      <label>x.com (Leave empty to start an empty project)</label>
+      <input type="text" placeholder='X.com username' id='x' />
+    </div>
+    <div class='item'>
+      <label>github.com (Leave empty to start an empty project)</label>
+      <input type="text" placeholder='Github username' id='github' />
+    </div>
+    <div class='item'>
+      <label>buymeacoffee.com (Leave empty to start an empty project)</label>
+      <input type="text" placeholder='BuyMeACoffee username' id='buymeacoffee' />
+    </div>
+    <div class='item'>
+      <label>ko-fi.com (Leave empty to start an empty project)</label>
+      <input type="text" placeholder='ko-fi username' id='kofi' />
+    </div>
+    <div class='item'>
+      <label>bsky.app (Leave empty to start an empty project)</label>
+      <input type="text" placeholder='bluesky username' id='bsky' />
+    </div>
+    <div class='item'>
+      <label>Website (Leave empty to start an empty project)</label>
+      <input type="text" placeholder='website url' id='website' />
+    </div>
+  </div>
+</div>
 <div class='item'>
-  <button>Submit</button>
+  <button>Generate</button>
 </div>
 </form>
 <script>
+
+
 document.querySelector("form").addEventListener("submit", async (e) => {
   e.preventDefault()
   e.stopPropagation()
@@ -69,6 +110,37 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   params.set("name", document.querySelector("#name").value)
   params.set("git", document.querySelector("#git").value)
   params.set("icon", document.querySelector("#icon").value)
+  
+  let x = document.querySelector("#x").value
+  if (x) {
+    params.set("x", `https://x.com/${x}`)
+  }
+
+  let github = document.querySelector("#github").value
+  if (github) {
+    params.set("github", `https://github.com/${github}`)
+  }
+
+  let buymeacoffee = document.querySelector("#buymeacoffee").value
+  if (buymeacoffee) {
+    params.set("buymeacoffee", `https://buymeacoffee.com/${buymeacoffee}`)
+  }
+
+  let kofi = document.querySelector("#kofi").value
+  if (kofi) {
+    params.set("kofi", `https://ko-fi.com/${kofi}`)
+  }
+
+  let bsky = document.querySelector("#bsky").value
+  if (bsky) {
+    params.set("bsky", `https://bsky.app/profile/${bsky}`)
+  }
+
+  let website = document.querySelector("#website").value
+  if (website) {
+    params.set("website", website)
+  }
+    
   location.href = "start.js?" + params.toString()
 })
 </script>
