@@ -15,7 +15,8 @@ module.exports = {
         "npx --yes gepeto@latest add link --title=buymeacoffee --value={{args.buymeacoffee || ''}}",
         "npx --yes gepeto@latest add link --title=kofi --value={{args.kofi || ''}}",
         "npx --yes gepeto@latest add link --title=bluesky --value={{args.bsky || ''}}",
-        "npx --yes gepeto@latest add link --title=website --value={{args.website || ''}}"
+        "npx --yes gepeto@latest add link --title=website --value={{args.website || ''}}",
+        "npx --yes gepeto@latest add link --title=bitcoin --type=bitcoin --value={{args.bitcoin || ''}}"
       ]
     }
   }, {

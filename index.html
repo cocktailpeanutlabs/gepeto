@@ -88,6 +88,10 @@ form button {
       <label>Website (Leave empty to start an empty project)</label>
       <input type="text" placeholder='website url' id='website' />
     </div>
+    <div class='item'>
+      <label>Bitcoin Donation Address (Leave empty to start an empty project)</label>
+      <input type="text" placeholder='bitcoin address' id='bitcoin' />
+    </div>
   </div>
 </div>
 <div class='item'>
@@ -139,6 +143,11 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   let website = document.querySelector("#website").value
   if (website) {
     params.set("website", website)
+  }
+
+  let bitcoin = document.querySelector("#bitcoin").value
+  if (bitcoin) {
+    params.set("bitcoin", bitcoin)
   }
     
   location.href = "start.js?" + params.toString()
