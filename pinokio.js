@@ -6,6 +6,7 @@ module.exports = {
   icon: "icon.jpeg",
   menu: async (kernel, info) => {
     let running = info.running("start.js")
+    let updating = info.running("update.js")
     if (running) {
       // display html button
       // display start.js button
@@ -17,6 +18,14 @@ module.exports = {
         icon: 'fa-solid fa-terminal',
         text: "Terminal",
         href: "start.js",
+      }]
+    } else if (updating) {
+      // display html button
+      return [{
+        default: true,
+        icon: "fa-solid fa-plug",
+        text: "Updating",
+        href: "update.js"
       }]
     } else {
       // display html button
